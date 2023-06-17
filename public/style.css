@@ -1,0 +1,22 @@
+body {
+    background-image: url('./images/bg.jpg'); /* Đường dẫn đến hình ảnh */
+    background-repeat: no-repeat; /* Không lặp lại */
+    background-size: cover; /* Tự động điều chỉnh kích thước để lấp đầy phần tử */
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 46px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: whitesmoke;
+}
+
+#chartDHT, #chartTemp, #chartHum {
+    background-color: rgba(171, 119, 157, 0.27);
+    width: 100%;
+    /* Thay đổi mã màu theo ý muốn */
+}
+
+
+
