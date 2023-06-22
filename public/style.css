@@ -1,22 +1,44 @@
 body {
-    background-image: url('./images/bg.jpg'); /* Đường dẫn đến hình ảnh */
-    background-repeat: no-repeat; /* Không lặp lại */
-    background-size: cover; /* Tự động điều chỉnh kích thước để lấp đầy phần tử */
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Roboto', sans-serif;
+    background-color: #ffffff
 }
 
 h1{
     font-size: 46px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    color: whitesmoke;
+    color: rgb(79, 110, 106);
+    font-weight: bold;
 }
 
 #chartDHT, #chartTemp, #chartHum {
-    background-color: rgba(171, 119, 157, 0.27);
+    background-color: #ffffff;
     width: 100%;
-    /* Thay đổi mã màu theo ý muốn */
 }
+
+#value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-size: 30px
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+  
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+  
+  
+  
 
 
 

@@ -47,7 +47,7 @@ const mqttClient = mqtt.connect(connectUrl, {
     reconnectPeriod: 1000,
 })
 
-const topic = '/ESP_Pub'
+const topic = 'CE232.N21.2_PUB'
 
 mqttClient.on('connect', () => {
     console.log('MQTT Connected'.yellow.underline)
@@ -94,8 +94,7 @@ mqttClient.on('message', (topic, message) => {
             console.error(error);
         });
     
-    io.emit('newData', { message: 'New data received!' });
-
+    io.emit('newData', { dht11 });
 })
 
 //Web app
@@ -106,12 +105,10 @@ app.set('view engine', 'ejs');
 app.get('/', async (req, res) => {
     try {
         const data = await dhtModel
-            .find()
+            .findOne()
             .sort({ createdAt: -1 })
-            .limit(10)
             .exec();
-        const reversedData = data.reverse();
-        res.render('home', { data: reversedData });
+        res.render('home', { data });
     } catch (err) {
         console.error('Error retrieving items from MongoDB:', err);
         return res.status(500).send('Internal Server Error');
