@@ -18,7 +18,6 @@ io.on('connection', (socket) => {
     console.log ('A clinet connected'.yellow.underline);
 })
   
-
 //connect MongoDB
 const mongoString = process.env.DATABASE_URL
 mongoose.connect(mongoString);
@@ -59,12 +58,10 @@ mqttClient.on('connect', () => {
 
 
 mqttClient.on('message', (topic, message) => {
-    //message is a Buffer
     let strMessage = message.toString();
-    //let objMessage = JSON.parse(strMessage);
     console.log("Receive message:\n", strMessage.blue);
-    //Split messsage
 
+    //Split messsage
     let dataArray = strMessage.split("\n\n");
 
     // Lấy giá trị Temperature từ phần tử thứ nhất trong mảng
@@ -78,7 +75,6 @@ mqttClient.on('message', (topic, message) => {
     // Lấy giá trị Weather từ phần tử thứ ba trong mảng
     let weatherString = dataArray[2].split(":")[1].trim();
     let weather = weatherString;
-
 
     const dht11 = new dhtModel({
         temp: temperature,
@@ -98,7 +94,6 @@ mqttClient.on('message', (topic, message) => {
 })
 
 //Web app
-
 app.use(express.json());
 app.set('view engine', 'ejs');
 

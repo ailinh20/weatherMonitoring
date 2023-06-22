@@ -27,6 +27,15 @@ h1{
     color: #fff;
     font-size: 30px
 }
+#signature {
+    background-color: #fff;
+    width: 10%;
+    height: 11.5%;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    color: #fff;
+}
 .fade-out {
     opacity: 0;
     transition: opacity 0.25s ease-in-out;

@@ -143,6 +143,7 @@ function setBackground(weather) {
     const chartElements = document.querySelectorAll('#chartDHT, #chartTemp, #chartHum');
     const h1 = document.querySelector('h1');
     const value = document.getElementById('value');
+    //const signature = document.getElementById('signature');
 
     if (oldWeather !== weather || flagFirstSetup) {
         body.classList.add('fade-out');
@@ -153,11 +154,13 @@ function setBackground(weather) {
                 chartElements.forEach(chart => chart.style.backgroundColor = 'rgba(123, 148, 145, 0.538)');
                 h1.style.color = 'rgb(79, 110, 106)';
                 value.style.backgroundColor = 'rgba(123, 148, 145, 0.538)';
+                //signature.style.backgroundColor = 'rgba(123, 148, 145, 0.538)';
             } else if (weather === 'Sunny') {
                 body.style.backgroundImage = "url('./images/sunny.jpg')";
                 chartElements.forEach(chart => chart.style.backgroundColor = 'rgba(227, 219, 149, 0.538)');
                 h1.style.color = 'rgb(227, 219, 149)';
                 value.style.backgroundColor = 'rgba(227, 219, 149, 0.538)';
+                //signature.style.backgroundColor = 'rgba(227, 219, 149, 0.538)';
             }
             oldWeather = weather;
             flagFirstSetup = false;
