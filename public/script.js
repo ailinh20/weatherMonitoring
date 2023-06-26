@@ -3,7 +3,7 @@ let oldWeather = '';
 let flagFirstSetup = true;
 function handleResponse(response) {
     const data = response.data;
-    const labels = data.map(item => moment(item.createdAt).format('HH:mm'));
+    const labels = data.map(item => moment(item.createdAt).format('HH:mm:ss'));
     const temperatures = data.map(item => item.temp);
     const humidities = data.map(item => item.hum);
 
@@ -119,21 +119,21 @@ function addData(data){
     charts[0].data.datasets[1].data.shift();
     charts[0].data.datasets[1].data.push(data.hum);
     charts[0].data.labels.shift();
-    charts[0].data.labels.push(moment(data.createdAt).format('HH:mm'));
+    charts[0].data.labels.push(moment(data.createdAt).format('HH:mm:ss'));
     charts[0].update();
 
     //Chart temp
     charts[1].data.datasets[0].data.shift();
     charts[1].data.datasets[0].data.push(data.temp);
     charts[1].data.labels.shift();
-    charts[1].data.labels.push(moment(data.createdAt).format('HH:mm'));
+    charts[1].data.labels.push(moment(data.createdAt).format('HH:mm:ss'));
     charts[1].update();
 
     //Chart hum
     charts[2].data.datasets[0].data.shift();
     charts[2].data.datasets[0].data.push(data.hum);
     charts[2].data.labels.shift();
-    charts[2].data.labels.push(moment(data.createdAt).format('HH:mm'));
+    charts[2].data.labels.push(moment(data.createdAt).format('HH:mm:ss'));
     charts[2].update();
 }
 
