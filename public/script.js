@@ -37,7 +37,7 @@ function handleResponse(response) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: false
                 }
             }   
         }
@@ -62,7 +62,7 @@ function handleResponse(response) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
+                    beginAtZero: false,
                 }
             }   
         }
@@ -87,7 +87,7 @@ function handleResponse(response) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
+                    beginAtZero: false,
                 }
             }   
         }
@@ -105,7 +105,6 @@ function loadData() {
     $.ajax({
         url: '/api/data',
         method: 'GET',
-        cache: false, // Tắt cache
         success: handleResponse
     });
 }

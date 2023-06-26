@@ -59,7 +59,8 @@ mqttClient.on('connect', () => {
 
 mqttClient.on('message', (topic, message) => {
     let strMessage = message.toString();
-    console.log("Receive message:\n", strMessage.blue);
+    console.log("********".cyan);
+    console.log(strMessage.cyan);
 
     //Split messsage
     let dataArray = strMessage.split("\n\n");
